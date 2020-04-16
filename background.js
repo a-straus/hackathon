@@ -4,7 +4,7 @@ chrome.runtime.onInstalled.addListener(function () {
   });
   chrome.contextMenus.create({
     id: 'ContextMenu',
-    title: 'Context Menu',
+    title: 'Share page with friends',
     contexts: ['all']
   });
 });
