@@ -1,18 +1,29 @@
 var db = new PouchDB('http://134.122.118.232:5984/hackathon');
-console.log(db);
+let x = db
+  .createIndex({
+    index: { fields: ['day'] }
+  })
+  .then(function () {
+    return db.find({
+      selector: { day: { $gte: date.getDate() - 3 } }
+    });
+  })
+  .then(function (data) {
+    data.forEach((doc) => {
+      const a = document.createElement('a')
+      a.target = '_blank';
+      a.href = doc.url
+      document.getElementById('articles').appendChild(a)
+  }).catch(error => {
+    console.log(error)
+  });
 
-class User {
-    constructor(name, id) {
-        this._id = id;
-        this.name = name;
-    }
-}
 
 
-const login = document.getElementById('login');
 const addPage = document.getElementById('addpage');
+
 addPage.onclick = function(element) {
-  const day = new Date().getDay
+  const day = new Date()
   const doc = {_id: Date.now(), day: day.getDate(), url: 'http://nytimes.com'}
   db.put(docs, function(err, result) {
     if (!err) console.log('added');
@@ -21,19 +32,9 @@ addPage.onclick = function(element) {
 }
 
 
-const data = {
-  "_id": "mittens",
-  "name": "Mittens",
-  "occupation": "kitten",
-  "age": 3,
-  "hobbies": [
-    "playing with balls of yarn",
-    "chasing laser pointers",
-    "lookin' hella cute"
-  ]
-}
 
 
+const login = document.getElementById('login');
 
 login.onclick = function(element) {
     console.log(window.document);
