@@ -13,7 +13,7 @@
         }]);
       });
 
-    console.log(document.body)
+    console.log(window.document);
     // document.querySelector('#button').addEventListener('click', function() {
     //     console.log(this);
     // })
