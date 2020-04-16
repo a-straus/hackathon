@@ -14,7 +14,7 @@ let x = db
       a.target = '_blank';
       a.href = doc.url
       document.getElementById('articles').appendChild(a)
-  }).catch(error => {
+  })}).catch(error => {
     console.log(error)
   });
 
@@ -46,5 +46,4 @@ login.onclick = function(element) {
         if (!err) console.log('added');
         else throw(err);
     })
-
-  };
+  }
