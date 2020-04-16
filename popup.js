@@ -9,7 +9,7 @@ let x = db
     });
   })
   .then(function (data) {
-    data.forEach((doc) => {
+    data.docs.forEach((doc) => {
       const a = document.createElement('a')
       a.target = '_blank';
       a.href = doc.url
