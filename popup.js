@@ -12,12 +12,10 @@ let x = db
     data.forEach((doc) => {
       const a = document.createElement('a');
       a.target = '_blank';
-      a.href = doc.url;
-      document.getElementById('articles').appendChild(a);
-    });
-  })
-  .catch((error) => {
-    console.log(error);
+      a.href = doc.url
+      document.getElementById('articles').appendChild(a)
+  })}).catch(error => {
+    console.log(error)
   });
 
 const date = new Date();
@@ -50,14 +48,14 @@ addPage.onclick = function (element) {
 
 const login = document.getElementById('login');
 
-// login.onclick = function(element) {
-//     console.log(window.document);
-//     let username = document.getElementById('username-field').value;
-//     console.log(username);
-//     const docs = new User(username, "1");
-//     console.log(JSON.stringify(docs));
-//     db.put(docs, function(err, result) {
-//         if (!err) console.log('added');
-//         else throw(err);
-//     })
-//   }
+login.onclick = function(element) {
+    console.log(window.document);
+    let username = document.getElementById('username-field').value;
+    console.log(username);
+    const docs = new User(username, "1");
+    console.log(JSON.stringify(docs));
+    db.put(docs, function(err, result) {
+        if (!err) console.log('added');
+        else throw(err);
+    })
+  }
