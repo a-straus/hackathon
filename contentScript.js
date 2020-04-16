@@ -11,7 +11,11 @@ function comment() {
     document.body.appendChild(menu);
     document.getElementById('cmt-btn').addEventListener('click', function() {
         let comment = this.previousSibling.previousSibling.value;
-        console.log(comment);
+        let addedComment = document.createElement('div');
+        addedComment.innerHTML = (`<div id="new-comment"> ${comment}
+        </div>`);
+        document.body.appendChild(addedComment);
+        console.log(addedComment);
         document.getElementById('comment-menu').remove();
     });
 }
