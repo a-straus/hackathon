@@ -18,6 +18,10 @@
       width: 300px;
   }
 
+  #comment-field:focus {
+      outline: none;
+  }
+
   #cmt-btn {
       border: 2px lightseagreen solid;
       background-color: white;

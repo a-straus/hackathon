@@ -1,9 +1,13 @@
+// var db = new PouchDB('http://134.122.118.232:5984/hackathon');
+
+// console.log(db);
+
 function comment() {
     let menu = document.createElement("div");
     menu.innerHTML = (`<div id="comment-menu">
         <textarea id="comment-field"></textarea>
         <button id="cmt-btn">Add comment</button>
-    </div>`);
+    </div>`); 
     document.body.appendChild(menu);
     document.getElementById('cmt-btn').addEventListener('click', function() {
         let comment = this.previousSibling.previousSibling.value;
