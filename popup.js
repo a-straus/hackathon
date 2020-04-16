@@ -9,13 +9,24 @@ let x = db
     });
   })
   .then(function (data) {
-    data.forEach((doc) => {
+    data.docs.forEach((doc) => {
+      console.log(doc);
       const a = document.createElement('a');
+      a.innerHTML = doc.title;
       a.target = '_blank';
-      a.href = doc.url
-      document.getElementById('articles').appendChild(a)
-  })}).catch(error => {
-    console.log(error)
+      a.href = doc.url;
+      console.log(a);
+      const articles = document.getElementById('articles');
+      articles.appendChild(a);
+      const span = document.createElement('span');
+      span.innerHTML = ` - ${doc.name}`;
+      a.insertAdjacentElement('afterend', span);
+      const br = document.createElement('br');
+      articles.appendChild(br);
+    });
+  })
+  .catch((error) => {
+    console.log(error);
   });
 
 const date = new Date();
@@ -45,17 +56,3 @@ addPage.onclick = function (element) {
     else throw err;
   });
 };
-
-const login = document.getElementById('login');
-
-login.onclick = function(element) {
-    console.log(window.document);
-    let username = document.getElementById('username-field').value;
-    console.log(username);
-    const docs = new User(username, "1");
-    console.log(JSON.stringify(docs));
-    db.put(docs, function(err, result) {
-        if (!err) console.log('added');
-        else throw(err);
-    })
-  }
