@@ -1,3 +1,6 @@
+var db = new PouchDB('http://134.122.118.232:5984/hackathon');
+
+console.log(db);
 chrome.runtime.onInstalled.addListener(function () {
   chrome.tabs.executeScript({
     file: 'contentScript.js'

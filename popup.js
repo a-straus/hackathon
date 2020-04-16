@@ -51,8 +51,4 @@ addPage.onclick = function (element) {
     day: day.getDate(),
     url: 'http://nytimes.com'
   };
-  db.put(docs, function (err, result) {
-    if (!err) console.log('added');
-    else throw err;
-  });
 };
