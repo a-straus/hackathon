@@ -2,9 +2,9 @@
     "name": "Getting Started Example",
     "version": "1.0",
     "description": "Build an Extension!",
-    "permissions": ["activeTab", "declarativeContent", "storage", "contextMenus"],
+    "permissions": ["activeTab", "declarativeContent", "storage", "contextMenus", "tabs"],
     "background": {
-      "scripts": ["popup.js", "background.js", "pouchdb-7.1.1.js"],
+      "scripts": ["popup.js", "background.js", "pouchdb-7.1.1.js", "contentScript.js"],
       "persistent": false
     },
     "page_action": {
