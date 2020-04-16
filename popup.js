@@ -10,14 +10,15 @@ let x = db
   })
   .then(function (data) {
     data.forEach((doc) => {
-      const a = document.createElement('a')
+      const a = document.createElement('a');
       a.target = '_blank';
-      a.href = doc.url
-      document.getElementById('articles').appendChild(a)
-  }).catch(error => {
-    console.log(error)
+      a.href = doc.url;
+      document.getElementById('articles').appendChild(a);
+    });
+  })
+  .catch((error) => {
+    console.log(error);
   });
-
 
 const date = new Date();
 console.log(
@@ -34,16 +35,18 @@ console.log(
 
 const addPage = document.getElementById('addpage');
 
-addPage.onclick = function(element) {
-  const day = new Date()
-  const doc = {_id: Date.now(), day: day.getDate(), url: 'http://nytimes.com'}
-  db.put(docs, function(err, result) {
+addPage.onclick = function (element) {
+  const day = new Date();
+  const doc = {
+    _id: Date.now(),
+    day: day.getDate(),
+    url: 'http://nytimes.com'
+  };
+  db.put(docs, function (err, result) {
     if (!err) console.log('added');
     else throw err;
   });
 };
-
-
 
 const login = document.getElementById('login');
 
