@@ -22,3 +22,12 @@ span {
   font-size: 1.6em;
   margin-top: 40px;
 }
+
+#comment-menu {
+  border: 1px black solid;
+  height: 300px;
+  width: 300px;
+  position: absolute;
+  left: 40%;
+  top: 40%;
+}
